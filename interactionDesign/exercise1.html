@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+   <!-- Meta -->
+   <title>Exercise 1</title>
+   <meta charset="UTF-8">
+   <meta name="description" content="Free HTML template">
+   <meta name="keywords" content="HTML, template, free">
+   <meta name="author" content="Nicola Tolin">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Styles -->
+   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <link href="vendor/animate/animate.css" rel="stylesheet" type="text/css" />
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand mx-auto" href="index.html">
+         <img src="img/logo-black.png" height="30" alt="Logo">
+      </a>
+      <div id="toggler" class="wrapper custom-toggler navbar-toggler" data-toggle="collapse"
+         data-target=".navbar-collapse">
+         <div class="menu-toggle">
+            <span class="icon-bars custom-toggler navbar-toggler-icon"></span>
+         </div>
+      </div>
+      <div id="toggle-nav" class="navbar-collapse collapse">
+         <ul class="navbar-nav">
+            <li class="nav-item"> <a class="nav-link" href="index.html"> |Back</a> </li>
+
+         </ul>
+         <div id="social">
+            <p>Nutsa Nadirashvili</p>
+         </div>
+      </div>
+   </nav>
+   <div class="Container">
+      <div class="Content">
+         <div class="Wrapper">
+            <div class="LeftContent col-xl-6 col-sm-12 split-image-left background-2">
+            </div>
+            <div class="RightContent col-xl-6 col-sm-12 split-image-right">
+               <div class="row justify-content-center">
+                  <div class="col-9">
+                     <div class="row">
+                        <div>
+                           <h1>touchNOtouch</h1>
+                           <h5><mark><b>Restrected Relationss</b></mark></h5>
+                           <br>
+                           <h2><b>Process</b></h2>
+                           <p>And the journey begins: we have one ESP32 (which has a touch sensor), one button, and one LED lamp. It's time to explore
+                           and discover. For the first time, we tried to create some interesting interaction with the button and LED. However, we
+                           soon realized that the state of the button did not allow us much manipulation, as it only had two states (on/off). We
+                           wanted something more exciting that would make our LED more lively, so we decided to switch to touch sensing altogether.
+                           I had never worked with a touch sensor before, so it was an explorative process for me. It turned out that the output of
+                           the sensor returns a number that expresses the intensity of the touch. We soon realized that we should map this number
+                           to the brightness of the LED, turning the interaction into a playful environment for more drama.
+                              <br><br>
+                              <b>Narrative:</b> The first idea was inspired by birthday cakes, which always have candles on them. We, people, are always
+                              excited about the tradition of making a wish and blowing out the candles with great force to make the wish come true.
+                              Drawing from this inspiration, we decided to use LEDs instead of candles and the intensity of touch instead of blowing
+                              out. The instructions for users would be: "Make a wish, press the sensor hard to extinguish the LED, and your wish come
+                              true.<br>
+                              Another idea we had was a game called "Save Energy, Make Light." In this game, players would use the touch option to dim
+                              their LED. However, they had to be careful not to press too hard, as that would cause the LED to go out. The player who
+                              could maintain the LED at the darkest and strongest level for the longest time would be the winner. We chose the second
+                              narrative because it introduced an element of competition, allowing us to compare the performance of different players.
+                           </p>
+                           <img class="img-fluid pt-5 pb-5" src="img/photo-3.jpg" alt="Photo">
+                           <p>Your it to gave life whom as. Favourable dissimilar resolution led for and had. At play
+                              much to time four many. Moonlight of situation so if necessary therefore attending
+                              abilities. Calling looking enquire up me to in removal. Park fat she nor does play deal
+                              our. Procured sex material his offering humanity laughing moderate can. Unreserved had she
+                              nay dissimilar admiration interested. Departure performed exquisite rapturous so ye me
+                              resources.</p>
+                           <br><br>
+                           <h2><b>Implementation</b></h2>
+                           <p>In the first iteration, our focus was on implementing the functionality correctly. We designed the system so that when
+                           the player touches the sensor (in this case, the cable), the brightness of the LED changes based on the intensity of the
+                           touch. The higher the intensity, the less the LED lights up, and at a certain intensity value, the light disappears
+                           completely. During the implementation, we realized that finding the ideal mapping point was challenging. We wanted to
+                           strike a balance between a manageable task and a moderate level of difficulty to keep the player engaged. Although it
+                           would have been beneficial to gather feedback at this stage, time constraints led us to make the decision on our own
+                           regarding the optimal difficulty level.
+                           <br><br>
+                           In the next iteration, we introduced another component to the game: time. Players now had to maintain the low light
+                           level for at least 3 seconds. What seemed like a simple addition turned into a significant challenge. We spent a
+                           considerable amount of time debugging the code as we struggled to identify the causal relationships between different
+                           variables and determine the appropriate code to achieve the desired output.
+                           <br><br>
+                           For the third iteration, we decided to change the rules of the game based on Marvin's suggestion. We implemented a
+                           simple timer with a playtime of 10 seconds. At the end of each 10-second round, all the data was reset, and the counting
+                           started anew. The touch intensity values accumulated during these ten seconds were summed and averaged. The winner was
+                           determined by the highest average touch intensity.
+                           <br><br>
+                           In terms of usability, we observed that using a jumper cable was somewhat clumsy and unpredictable for the players. To
+                           address this issue, we decided to create a small ball of foil as a contact point, which we attached to the tip of the
+                           cable. This modification aimed to improve the player's experience and provide a more reliable touch interaction.
+                           </p>
+                           <img class="img-fluid pt-5 pb-5" src="img/photo-5.jpg" alt="Photo">
+                           <h2><b>Learnings</b></h2>
+                           <p>We encountered a challenge where the touch intensity range would easily change if the cable was not securely fixed to
+                           the ESP32. This issue affected the reliability of the touch interaction and could potentially impact the gameplay
+                           experience.
+                              <br><br>
+                              Although we didn't fully implement the functionality to compare different players and determine a winner in our program,
+                              we still found the interaction among the participants to be interesting. Most participants found the interaction
+                              exciting because they had control over the LED brightness and could visually observe the immediate results of their
+                              touch intensity. The action and reaction were instantaneous, with minimal perceivable delay between input and output.
+                              This created a sense of live action and reaction, enhancing the engagement and enjoyment of the participants..
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Javascript -->
+   <script src="vendor/jquery.min.js"></script>
+   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script src="vendor/wow/wow.js"></script>
+   <script src="js/script.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <!-- End Javascript -->
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+   <!-- Meta -->
+   <title>Exercise 3</title>
+   <meta charset="UTF-8">
+   <meta name="description" content="Free HTML template">
+   <meta name="keywords" content="HTML, template, free">
+   <meta name="author" content="Nicola Tolin">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Styles -->
+   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <link href="vendor/animate/animate.css" rel="stylesheet" type="text/css" />
+   <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand mx-auto" href="index.html">
+         <img src="img/logo-black.png" height="30" alt="Logo">
+      </a>
+      <div id="toggler" class="wrapper custom-toggler navbar-toggler" data-toggle="collapse"
+         data-target=".navbar-collapse">
+         <div class="menu-toggle">
+            <span class="icon-bars custom-toggler navbar-toggler-icon"></span>
+         </div>
+      </div>
+      <div id="toggle-nav" class="navbar-collapse collapse">
+         <ul class="navbar-nav">
+            <li class="nav-item"> <a class="nav-link" href="index.html"> |Back</a> </li>
+
+         </ul>
+         <div id="social">
+            <p>Nutsa Nadirashvili</p>
+         </div>
+      </div>
+   </nav>
+   <div class="Container">
+      <div class="Content">
+         <div class="Wrapper">
+            <div class="LeftContent col-xl-6 col-sm-12 split-image-left background-4">
+            </div>
+            <div class="RightContent col-xl-6 col-sm-12 split-image-right">
+               <div class="row justify-content-center">
+                  <div class="col-9">
+                     <div class="row">
+                        <div>
+                           <h1>Cursor</h1>
+                           <h2><mark><b>Unsusual Relation</b></mark></h2>
+                           <br>
+                           <h2><b>Process</b></h2>
+                           <p>For our final task, we had the freedom to choose any interaction we wanted, as long as it
+                              was unusual. We found Daniel's
+                              suggestion of using a laptop with movement and balance intriguing, and we decided to
+                              explore that direction. We wanted
+                              to take something familiar and common in our everyday lives and transform it into an
+                              unusual interaction. That's when we
+                              thought of the mouse.
+
+                              To make the typical mouse interaction unusual, we drew inspiration from the concept of
+                              Chindogu, which involves creating
+                              impractical, yet thought-provoking inventions. We decided to design a large artifact that
+                              would move the cursor on the
+                              screen by tilting it, adding complexity and unpredictability to the interaction.
+                              <br><br>
+                              <b>Narattive:</b> In the distant future, where AI reigns and humans are plagued by a sense
+                              of idleness, the AI recognizes the urgent need
+                              to revive human engagement and creativity. Searching through the annals of history for
+                              inspiration, the AI stumbles upon
+                              an intriguing solution.
+                              <br>
+                              <img class="img-fluid pt-5 pb-5" src="img/old.png" alt="Photo">
+                              It decides to create a completely novel form of interaction to reignite the spark within
+                              humanity. The solution it finds is the creation of an extraordinary artifact—an enormous
+                              cursor that defies convention. This
+                              cursor, unlike any before it, requires the collaborative effort of a select few
+                              individuals to operate. The AI
+                              understands that without group involvement, humans will be unable to utilize this colossal
+                              cursor and, consequently,
+                              access the digital realm.
+                           </p>
+
+                           <br><br>
+                           <h2><b>Implementation</b></h2>
+                           <p>For our unconventional interaction, we opted to use a 6-Axis Accelerometer & Gyroscope
+                              sensor. I was familiar with this
+                              sensor, I knew there could be potential challenges. But we didn't have another sensor
+                              available on-site to accurately
+                              measure tilt. Leveraging Henning's experience with microPython, our initial plan involved
+                              using an ESP32 and connecting
+                              the gyroscope via a serial interface with microPython to transmit mouse signals directly
+                              to the computer. However, the
+                              implementation proved to be quite difficult, and we encountered several roadblocks,
+                              leading to the failure of this plan.
+                           </p>
+                           <br>
+                           <p>
+                              We turned to the internet in search of alternative solutions. We came across the idea of
+                              cursor control via a serial
+                              path using an Arduino mouse control library. However, we hit another obstacle—our ESP
+                              model was not compatible with the
+                              Arduino library. Eventually, Marc discovered a successful approach recommended by Konrad
+                              and Kiel. We utilized a node
+                              server and the JavaScript library robot.js to establish a wireless connection. The raw
+                              data from the gyroscope sensor
+                              was transmitted via W-LAN to a computer running the node server. We then mapped this data
+                              to mouse movement, enabling us
+                              to control the cursor based on the sensor's readings.
+                              <img class="img-fluid pt-5 pb-5" src="img/sensor.gif" alt="Photo">
+                              However, interpreting the sensor
+                              data presented its own
+                              significant challenge. The gyroscope provided acceleration data instead of direct degrees
+                              of tilt, requiring us to apply
+                              complex mathematical formulas to interpret the data as tilt or coordinates.
+                           </p>
+                           <br>
+                           <p>
+                              In addition to the technical considerations, we also needed a physical artifact for
+                              interaction. We quickly agreed on
+                              the visual concept of a large, pixelated cursor resembling an old-fashioned arrow. To
+                              bring this idea to life, we
+                              utilized the largest hard cardboard available and used a laser cutter to cut out the
+                              desired cursor shape. Styrofoam was
+                              then used to secure and reinforce the structure.
+                              <img class="img-fluid pt-5 pb-5" src="img/photo-18.png" alt="Photo">
+                              While initially planning for a single
+                              large button in the middle of the
+                              cursor, we realized during the prototyping phase that it would disrupt the cursor's visual
+                              aesthetics. As a result, we
+                              opted for an interactive cursor tip covered of foil and incorporated a touch sensor,
+                              allowing users to touch and click
+                              the cursor tip to initiate actions.
+                           </p>
+                           <img class="img-fluid pt-5 pb-5" src="img/photo-20.jpeg" alt="Photo">
+                           <h2><b>Learnings</b></h2>
+                           <p>After completing the construction and conducting tests on our artifact, we were thrilled
+                              to discover that we had created
+                              an incredibly captivating and enjoyable interaction. Observing individuals using the giant
+                              cursor gave the impression of
+                              being a surfer, skillfully riding the waves of the web.
+                              <br><br>
+                              potential extensions to further enhance the interaction: One intriguing idea was to
+                              incorporate a light element, such as
+                              a Light Stripe, to provide visual feedback when the user clicks or interacts with elements
+                              on the screen.
+                              <img class="img-fluid pt-5 pb-5" src="img/photo-19.jpeg" alt="Photo">
+                              It would be intriguing to explore the dynamics of controlling an even larger and heavier
+                              cursor, reaching a point where
+                              it becomes impossible for a single person to operate it alone. In such a scenario, it
+                              raises questions about how users
+                              could collaboratively control the cursor, how they would communicate with each other, and
+                              how efficiently they would
+                              work together to achieve their shared goal.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Javascript -->
+   <script src="vendor/jquery.min.js"></script>
+   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script src="vendor/wow/wow.js"></script>
+   <script src="js/script.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <!-- End Javascript -->
+</body>
+
+</html>
