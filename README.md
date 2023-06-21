@@ -1,3 +1,3 @@
 # interactionDesign
 
-Documentations - Nutsa Nadirashvili 
+Documentation - Nutsa Nadirashvili 
